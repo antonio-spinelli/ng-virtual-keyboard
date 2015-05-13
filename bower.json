@@ -23,7 +23,8 @@
     "css",
     "demo",
     "src",
-    "gulpfile.js"
+    "gulpfile.js",
+    "package.json"
   ],
   "dependencies": {},
   "devDependencies": {

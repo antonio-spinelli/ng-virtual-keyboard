@@ -3,7 +3,6 @@
 angular.module('ng-virtual-keyboard', [])
 
 .constant('NGVK_CONFIG', {
-	/*jshint maxlen:500 */
 	'keyboard': 'qwerty',
 	'plugin': 'form'
 })

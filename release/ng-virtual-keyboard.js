@@ -313,6 +313,7 @@
 	}
 
 })(jQuery);
+
 (function($) {
 	$.keyboard.keyboards.azerty	= [
 		['@','1','2','3','4','5','6','7','8','9','0',{text:'⌫',name:'backSpace',action:function(e){return false;}}],
@@ -322,6 +323,7 @@
 		[{text:' ',name:'space'},{text:'←',action:false,name:'leftArrow'},{text:'→',action:false,name:'rightArrow'}]
 	];
 })(jQuery);
+
 (function($) {
 	$.keyboard.keyboards.qwerty	= [
 		['@','1','2','3','4','5','6','7','8','9','0',{text:'⌫',name:'backSpace',action:function(e){return false;}}],
@@ -331,6 +333,7 @@
 		[{text:' ',name:'space'},{text:'←',action:false,name:'leftArrow'},{text:'→',action:false,name:'rightArrow'}]
 	];
 })(jQuery);
+
 (function($) {
 	$.keyboard.plugins.form	= function(e) {
 		function trace(e) {
@@ -414,7 +417,7 @@
 		});
 		
 		// Show
-		$('input[type!="submit"],textarea').live('focus', function(e) {
+		$('input[type!="submit"],textarea').on('focus', function(e) {
 			setFocus($(e.target));
 		});
 		
@@ -439,6 +442,7 @@
 				.hide();
 	};
 })(jQuery);
+
 // jQuery Plugin Boilerplate
 // A boilerplate for jumpstarting jQuery plugins development
 // version 1.0, Jun 24th, 2011
@@ -608,7 +612,6 @@
 angular.module('ng-virtual-keyboard', [])
 
 .constant('NGVK_CONFIG', {
-	/*jshint maxlen:500 */
 	'keyboard': 'qwerty',
 	'plugin': 'form'
 })
