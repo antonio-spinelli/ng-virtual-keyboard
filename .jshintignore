@@ -1,0 +1,5 @@
+src/jQuery.keyboard/jquery.keyboard.js
+src/jQuery.keyboard/keyboards/azerty.js
+src/jQuery.keyboard/keyboards/qwerty.js
+src/jQuery.keyboard/plugins/form.js
+src/jquery.selection.js

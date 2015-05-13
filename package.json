@@ -1,0 +1,33 @@
+{
+  "name": "ng-virtual-keyboard",
+  "version": "0.0.1",
+  "description": "An AngularJs Virtual Keyboard Interface based on cahnory jQuery.keyboard",
+  "main": "./release/ng-virtual-keyboard.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonio-spinelli/ng-virtual-keyboard.git"
+  },
+  "author": "antonio-spinelli <antonio.86.spinelli@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antonio-spinelli/ng-virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/antonio-spinelli/ng-virtual-keyboard",
+  "devDependencies": {
+    "conventional-changelog": "0.0.16",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.2.2",
+    "gulp-jshint": "^1.9.2",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-uglify": "^1.1.0",
+    "jshint-stylish": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
