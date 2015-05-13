@@ -6,7 +6,10 @@
     "antonio-spinelli <antonio.86.spinelli@gmail.com>"
   ],
   "description": "An AngularJs Virtual Keyboard Interface based on cahnory jQuery.keyboard",
-  "main": "release/ng-virtual-keyboard.min.js",
+  "main": [
+    "release/ng-virtual-keyboard.min.js",
+    "release/ng-virtual-keyboard.css"
+  ],
   "keywords": [
     "Keyboard",
     "Virtual",

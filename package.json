@@ -2,7 +2,6 @@
   "name": "ng-virtual-keyboard",
   "version": "0.0.1",
   "description": "An AngularJs Virtual Keyboard Interface based on cahnory jQuery.keyboard",
-  "main": "./release/ng-virtual-keyboard.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/antonio-spinelli/ng-virtual-keyboard.git"

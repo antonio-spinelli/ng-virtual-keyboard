@@ -1,6 +1,6 @@
 # ng-virtual-keyboard
-========================
-An AngularJs Virtual Keyboard Interface based on [cahnory jQuery.keyboard](https://github.com/cahnory/jQuery.keyboard). See example in the [Demo page](https://github.com/cahnory/jQuery.keyboard)
+
+An AngularJs Virtual Keyboard Interface based on [cahnory jQuery.keyboard](https://github.com/cahnory/jQuery.keyboard). See example in the [Demo page](http://project.cahnory.fr/jquery.keyboard/)
 
 ## Bower install
 
