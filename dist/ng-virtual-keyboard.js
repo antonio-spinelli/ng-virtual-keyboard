@@ -11,7 +11,7 @@
 angular.module('ng-virtual-keyboard', [])
 
 .constant('VKI_CONFIG', {
-	layout: 'qwerty'
+	
 })
 
 .service('ngVirtualKeyboardService', ['VKI_CONFIG', function(VKI_CONFIG) {
@@ -48,9 +48,9 @@ angular.module('ng-virtual-keyboard', [])
 
 	    throw new Error("Unable to copy obj! Its type isn't supported.");
 	};
-	
+
 	return {
-		attach: function(element, config) {
+		attach: function(element, config, inputCallback) {
 			var newConfig = clone(VKI_CONFIG);
 
 			config = config || {};
@@ -59,21 +59,31 @@ angular.module('ng-virtual-keyboard', [])
 				if (config.hasOwnProperty(attr)) newConfig[attr] = config[attr];
 			}
 
+			newConfig.accepted = config.accepted || inputCallback;
+
 			$(element).keyboard(newConfig);
 		}
 	};
 }])
 
-.directive('ngVirtualKeyboard', ['ngVirtualKeyboardService',
-	function(ngVirtualKeyboardService) {
+.directive('ngVirtualKeyboard', ['ngVirtualKeyboardService', '$timeout',
+	function(ngVirtualKeyboardService, $timeout) {
 	return {
 		restrict: 'A',
 		require : '?ngModel',
 		scope: {
 			config: '=ngVirtualKeyboard'
 		},
-		link: function(scope, elements, attrs) {
-			ngVirtualKeyboardService.attach(elements[0], scope.config);
+		link: function(scope, elements, attrs, ngModelCtrl) {
+			if(!ngModelCtrl){
+				return;
+			}
+
+			ngVirtualKeyboardService.attach(elements[0], scope.config, function() {
+				$timeout(function() {
+					ngModelCtrl.$setViewValue(elements[0].value);
+				});
+			});
 		}
 	};
 }]);
