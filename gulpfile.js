@@ -39,23 +39,18 @@ gulp.task('build', function() {
 		''].join('\n');
 
 	gulp.src([
-		'src/jQuery.keyboard/jquery.keyboard.js',
-		'src/jQuery.keyboard/keyboards/azerty.js',
-		'src/jQuery.keyboard/keyboards/qwerty.js',
-		'src/jQuery.keyboard/plugins/form.js',
-		'src/jquery.selection.js',
 		'src/ng-virtual-keyboard.js'
 	])
 	.pipe(plugins.concat('ng-virtual-keyboard.js'))
 	.pipe(plugins.header(header, {pkg: pkg}))
 	.pipe(plugins.footer(footer))
-	.pipe(gulp.dest('./release/'))
+	.pipe(gulp.dest('./dist/'))
 	.pipe(plugins.uglify())
 	.pipe(plugins.concat('ng-virtual-keyboard.min.js'))
-	.pipe(gulp.dest('./release/'));
+	.pipe(gulp.dest('./dist/'));
 
 	gulp.src('css/ng-virtual-keyboard.css')
-	.pipe(gulp.dest('./release/'));
+	.pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('default', ['jshint', 'build'], function() {

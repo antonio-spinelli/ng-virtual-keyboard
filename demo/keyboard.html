@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Virtual Keyboard Demo</title>
+	<link href="../www/lib/jquery-ui/themes/cupertino/jquery-ui.min.css" rel="stylesheet">
+	<link href="../www/lib/keyboard/dist/css/keyboard.min.css" rel="stylesheet">
+	<link href="demo.css" rel="stylesheet">
+
+	<script src="../www/lib/jquery/dist/jquery.min.js"></script>
+	<script src="../www/lib/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../www/lib/keyboard/dist/js/jquery.keyboard.min.js"></script>
+
+	<script type="text/javascript">
+	jQuery(function($) {
+		$('.qwerty:first').keyboard({ layout: 'qwerty' });
+
+		$('.version').html( '(v' + $('.qwerty').getkeyboard().version + ')' );
+	});
+	</script>
+</head>
+<body>
+	<div id="content">
+		<h1>Virtual Keyboard <span class="version"></span></h1>
+
+		<div class="block">
+			<h2>
+				<span class="tooltip-tipsy" title="Click, then scroll down to see this code">QWERTY Text</span>
+			</h2>
+			<input id="text" class="qwerty" type="text" placeholder=" Enter something...">
+			<br>
+			<small>
+				* Placeholder (watermark).
+			</small>
+		</div>
+	</div>
+</body>
+</html>

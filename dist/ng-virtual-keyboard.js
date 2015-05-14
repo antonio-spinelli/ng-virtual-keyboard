@@ -1,3 +1,13 @@
+/**
+ * ng-virtual-keyboard
+ * An AngularJs Virtual Keyboard Interface based on Mottie/Keyboard
+ * @version v0.0.2
+ * @author antonio-spinelli <antonio.86.spinelli@gmail.com>
+ * @link https://github.com/antonio-spinelli/ng-virtual-keyboard
+ * @license MIT
+ */
+(function (angular) {
+
 angular.module('ng-virtual-keyboard', [])
 
 .constant('VKI_CONFIG', {
@@ -67,3 +77,5 @@ angular.module('ng-virtual-keyboard', [])
 		}
 	};
 }]);
+
+})(angular);
