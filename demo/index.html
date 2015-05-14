@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ng Virtual Keyboard Demo</title>
-	<link href="../www/lib/jquery-ui/themes/cupertino/jquery-ui.min.css" rel="stylesheet">
 	<link href="../www/lib/keyboard/dist/css/keyboard.min.css" rel="stylesheet">
+	<link href="../www/lib/materialize/dist/css/materialize.min.css" rel="stylesheet">
 
 	<link href="../dist/ng-virtual-keyboard.css" rel="stylesheet">
 	<link href="demo.css" rel="stylesheet">
@@ -17,6 +17,7 @@
 	<script src="../www/lib/keyboard/dist/js/jquery.mousewheel.min.js"></script>
 	<script src="../www/lib/keyboard/dist/js/jquery.keyboard.extension-typing.min.js"></script>
 	<script src="../www/lib/keyboard/dist/js/jquery.keyboard.extension-autocomplete.min.js"></script>
+	<script src="../www/lib/materialize/dist/js/materialize.min.js"></script>
 	
 	<script src="../www/lib/angular/angular.min.js"></script>
 	<script src="../dist/ng-virtual-keyboard.js"></script>
@@ -24,12 +25,18 @@
 	<script>
 		angular.module('exampleApp', ['ng-virtual-keyboard'])
 		.config(['VKI_CONFIG', function(VKI_CONFIG) {
-			VKI_CONFIG.layout = 'qwerty';
 			VKI_CONFIG.position = {
 				of: 'body',
 				my: 'center top',
 				at: 'center bottom',
 				offset: '0 20'
+			};
+			VKI_CONFIG.tabNavigation = true;
+			VKI_CONFIG.css = {
+				container: 'blue-grey darken-1',
+				buttonDefault: 'btn waves-effect waves-light',
+				buttonAction: 'orange',
+				buttonDisabled: 'disabled'
 			};
 		}])
 		.controller('ExampleCtrl', ['$scope', function($scope){
@@ -39,40 +46,68 @@
 </head>
 <body ng-app="exampleApp">
 	<div ng-controller="ExampleCtrl">
-
-		<div id="content">
+		<div id="content" class="container">
 			<h1>Ng Virtual Keyboard</h1>
 
-			<div class="block">
-				<h2>
-					<span class="tooltip-tipsy">QWERTY Text</span>
-				</h2>
-				<input type="text"
-					ng-model="t01"
-					ng-virtual-keyboard="{layout: 'alpha'}"
-					placeholder=" Enter something...">
-				</input>
-				<br>
-				<small>
-					Model value: {{t01}}<br>
-					* Placeholder (watermark).
-				</small>
-			</div>
-
-			<div class="block">
-				<h2>
-					<span class="tooltip-tipsy">QWERTY Email</span>
-				</h2>
-				<input type="email"
-					ng-model="t02"
-					ng-virtual-keyboard
-					placeholder=" Enter a valid email...">
-				</input>
-				<br>
-				<small>
-					Model value: {{t02}}<br>
-					* Placeholder (watermark).
-				</small>
+			<div class="row">
+				<form class="col s12">
+					<div class="row">
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t01">ALPHA Text</label>
+								<input type="text" name="t01" ng-model="t01"
+									class="validate"
+									ng-virtual-keyboard="{layout: 'alpha'}"
+									placeholder=" Enter something..."
+									required>
+								</input>
+								<small>
+									Model value: {{t01}}<br>
+									* Placeholder (watermark).
+								</small>
+							</div>
+						</div>
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t02">QWERTY Email</label>
+								<input type="email" name="t02" ng-model="t02"
+									class="validate"
+									ng-virtual-keyboard>
+								</input>
+								<small>
+									Model value: {{t02}}<br>
+									* Valid Email
+								</small>
+							</div>
+						</div>
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t03">Password</label>
+								<input type="password" name="t03" ng-model="t03"
+									class="validate"
+									ng-virtual-keyboard="{layout: 'num'}">
+								</input>
+								<small>
+									Model value: {{t03}}
+								</small>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t04">Textarea</label>
+								<textarea type="password" name="t04" ng-model="t04"
+									class="materialize-textarea"
+									ng-virtual-keyboard="{layout: 'international'}">
+								</textarea>
+								<small>
+									Model value: {{t04}}
+								</small>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,6 @@
 html, body {
 	background: #ced5dd;
-	font: 16px/1.4em "HelveticaNeue", Helvetica, Arial, sans-serif;
+	/*font: 16px/1.4em "HelveticaNeue", Helvetica, Arial, sans-serif;*/
 	margin: 0;
 }
 
@@ -18,14 +18,14 @@ input { border: none; }
 	-moz-box-shadow: 0 0 0 3px rgba(255,255,255,.6), 0 3px 6px rgba(0,0,0,.2);
 	box-shadow: 0 0 0 3px rgba(255,255,255,.6), 0 3px 6px rgba(0,0,0,.2);
 	color: #555;
-	margin: 4em auto;
+	margin: 2em auto;
 	padding: 1em;
 	text-shadow: 0 1px #FFF;
-	width: 650px;
+	width: 90%;
 }
 
 .block {
-	width: 270px;
+	width: 300px;
 	display: inline-block;
 	height: 170px;
 	margin: 15px;

@@ -7,8 +7,7 @@
   ],
   "description": "An AngularJs Virtual Keyboard Interface based on Mottie/Keyboard",
   "main": [
-    "release/ng-virtual-keyboard.min.js",
-    "release/ng-virtual-keyboard.css"
+    "release/ng-virtual-keyboard.min.js"
   ],
   "keywords": [
     "Keyboard",
@@ -20,15 +19,14 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "css",
     "demo",
     "src",
     "gulpfile.js",
     "package.json"
   ],
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "keyboard": ">=1.22.5",
-    "angular": "~1.3.0"
+    "angular": "~1.3.0",
+    "materialize": "~0.96.1"
   }
 }
