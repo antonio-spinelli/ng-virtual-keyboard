@@ -1,6 +1,5 @@
 html, body {
 	background: #ced5dd;
-	/*font: 16px/1.4em "HelveticaNeue", Helvetica, Arial, sans-serif;*/
 	margin: 0;
 }
 
@@ -22,15 +21,4 @@ input { border: none; }
 	padding: 1em;
 	text-shadow: 0 1px #FFF;
 	width: 90%;
-}
-
-.block {
-	width: 300px;
-	display: inline-block;
-	height: 170px;
-	margin: 15px;
-	padding-bottom: 30px;
-	text-align: center;
-	vertical-align: top;
-	position: relative;
 }

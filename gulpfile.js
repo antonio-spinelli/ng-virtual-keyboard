@@ -48,6 +48,15 @@ gulp.task('build', function() {
 	.pipe(plugins.uglify())
 	.pipe(plugins.concat('ng-virtual-keyboard.min.js'))
 	.pipe(gulp.dest('./dist/'));
+
+	gulp.src('www/lib/keyboard/dist/css/keyboard.min.css')
+	.pipe(gulp.dest('./dist/keyboard/css'));
+
+	gulp.src('www/lib/keyboard/dist/js/*')
+	.pipe(gulp.dest('./dist/keyboard/js'));
+
+	gulp.src('www/lib/keyboard/dist/layouts/*')
+	.pipe(gulp.dest('./dist/keyboard/layouts'));
 });
 
 gulp.task('default', ['jshint', 'build'], function() {
