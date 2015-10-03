@@ -1,38 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Virtual Keyboard Demo</title>
-	<link href="../www/lib/jquery-ui/themes/cupertino/jquery-ui.min.css" rel="stylesheet">
-	<link href="../www/lib/keyboard/dist/css/keyboard.min.css" rel="stylesheet">
-	<link href="demo.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Virtual Keyboard Demo</title>
 
-	<script src="../www/lib/jquery/dist/jquery.min.js"></script>
-	<script src="../www/lib/jquery-ui/jquery-ui.min.js"></script>
-	<script src="../www/lib/keyboard/dist/js/jquery.keyboard.min.js"></script>
+  <link href="http://code.jquery.com/ui/1.11.4/themes/cupertino/jquery-ui.css" rel="stylesheet">
+  <link href="keyboard/css/keyboard.min.css" rel="stylesheet">
+  <link href="demo.css" rel="stylesheet">
 
-	<script type="text/javascript">
-	jQuery(function($) {
-		$('.qwerty:first').keyboard({ layout: 'qwerty' });
+  <!-- jQuery + jQuery-UI -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="keyboard/js/jquery.keyboard.min.js"></script>
 
-		$('.version').html( '(v' + $('.qwerty').getkeyboard().version + ')' );
-	});
-	</script>
+  <script type="text/javascript">
+  jQuery(function($) {
+    $('.qwerty:first').keyboard({ layout: 'qwerty' });
+
+    $('.version').html( '(v' + $('.qwerty').getkeyboard().version + ')' );
+
+    $('#password')
+      .keyboard({
+        openOn : null,
+        stayOpen : true,
+        layout : 'qwerty'
+      });
+
+    $('#passwd').click(function(){
+      var kb = $('.qwerty:eq(1)').getkeyboard();
+      // close the keyboard if the keyboard is visible and the button is clicked a second time
+      if ( kb.isOpen ) {
+        kb.close();
+      } else {
+        kb.reveal();
+      }
+    });
+  });
+  </script>
 </head>
 <body>
-	<div id="content">
-		<h1>Virtual Keyboard <span class="version"></span></h1>
+  <div id="content">
+    <h1>Virtual Keyboard <span class="version"></span></h1>
 
-		<div class="block">
-			<h2>
-				<span class="tooltip-tipsy" title="Click, then scroll down to see this code">QWERTY Text</span>
-			</h2>
-			<input id="text" class="qwerty" type="text" placeholder=" Enter something...">
-			<br>
-			<small>
-				* Placeholder (watermark).
-			</small>
-		</div>
-	</div>
+    <div class="block">
+      <h2>
+        <span class="tooltip-tipsy" title="Click, then scroll down to see this code">QWERTY Text</span>
+      </h2>
+      <input id="text" class="qwerty" type="text" placeholder=" Enter something...">
+      <br>
+      <small>
+        * Placeholder (watermark).
+      </small>
+    </div>
+
+    <div class="block">
+      <h2>
+        <span class="tooltip-tipsy" title="Click, then scroll down to see this code">QWERTY Password</span>
+        <img id="passwd" class="tooltip-tipsy" title="Click to open the virtual keyboard" src="keyboard/css/images/keyboard.svg">
+      </h2>
+      <input id="password" class="qwerty" type="password">
+      <br>
+      <small>
+        * Click icon to open keyboard.<br>
+        * Stay open until accept/cancel/esc.<br>
+        * Key hover disabled in this type.<br>
+      </small>
+    </div>
+
+  </div>
 </body>
 </html>
