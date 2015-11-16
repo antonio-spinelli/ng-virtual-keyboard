@@ -108,11 +108,13 @@
 										<input id="t03" type="password" name="t03" ng-model="t03"
 											class="validate"
 											placeholder="Insert your password"
-											ng-virtual-keyboard="{layout: 'num'}">
+											ng-virtual-keyboard="{layout: 'num', restrictInput: true, preventPaste: true}">
 										</input>
 										<small>
 											Model value: {{t03}}<br>
-											* Click button to open keyboard.
+											* Click button to open keyboard.<br>
+											* Input restricted.<br>
+											* Pasting (ctrl-v) not allowed.
 										</small>
 									</div>
 								</div>
@@ -133,12 +135,13 @@
 						<div class="col s12 m6 l4">
 							<div class="input-field">
 								<label for="t04">Textarea</label>
-								<textarea type="password" name="t04" ng-model="t04"
+								<textarea name="t04" ng-model="t04"
 									class="materialize-textarea"
-									ng-virtual-keyboard="{layout: 'international'}">
+									ng-virtual-keyboard="{layout: 'international', autoAccept: true}">
 								</textarea>
 								<small>
-									Model value: {{t04}}
+									Model value: {{t04}}<br>
+									* Auto accept content.
 								</small>
 							</div>
 						</div>
