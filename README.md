@@ -24,6 +24,9 @@ $ bower install ng-virtual-keyboard
 <input type='text' ng-model="yourModel" ng-virtual-keyboard/>
 ```
 
+## Changelog
+[Go to Changelog Page](https://github.com/antonio-spinelli/ng-virtual-keyboard/blob/master/CHANGELOG.md)
+
 ## License
 
 The MIT License (MIT)
