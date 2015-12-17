@@ -17,20 +17,21 @@
 	<!-- keyboard extensions (optional) -->
 	<script src="keyboard/js/jquery.mousewheel.min.js"></script>
 	<script src="keyboard/js/jquery.keyboard.extension-typing.min.js"></script>
-	<script src="keyboard/js/jquery.keyboard.extension-autocomplete.min.js"></script>
+	<script src="keyboard/js/jquery.keyboard.extension-scramble.min.js"></script>
 
 	<!-- Materialize -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
 	<!-- AngularJs -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
 	<script src="../dist/ng-virtual-keyboard.js"></script>
 
 	<script>
 		angular.module('exampleApp', ['ng-virtual-keyboard'])
-		.config(['VKI_CONFIG', function(VKI_CONFIG) {
+
+		.config(['VKI_CONFIG', function(VKI_CONFIG){
 			VKI_CONFIG.position = {
 				of: 'body',
 				my: 'center top',
@@ -40,11 +41,33 @@
 			VKI_CONFIG.css = {
 				container: 'blue-grey darken-1',
 				buttonDefault: 'btn waves-effect waves-light',
+				buttonHover: 'orange',
 				buttonAction: 'orange',
+				buttonActive: 'orange',
 				buttonDisabled: 'disabled'
 			};
+			VKI_CONFIG.extensions = {
+				addTyping: false
+			};
 		}])
+
 		.controller('ExampleCtrl', ['$scope', 'ngVirtualKeyboardService', function($scope, ngVirtualKeyboardService){
+			$scope.t01Config = {
+				layout: 'alpha',
+				extensions: {
+					addTyping: false
+				}
+			};
+
+			$scope.t04Config = {
+				layout: 'international',
+				autoAccept: true,
+				extensions: {
+					addScramble: {randomizeOnce: false},
+					addTyping: false
+				}
+			};
+
 			$scope.onKeyboardClick = function(id){
 				var keyboard = ngVirtualKeyboardService.getKeyboardById(id);
 				if (keyboard) {
@@ -75,7 +98,7 @@
 								<label for="t01">ALPHA Text</label>
 								<input type="text" name="t01" ng-model="t01"
 									class="validate"
-									ng-virtual-keyboard="{layout: 'alpha'}"
+									ng-virtual-keyboard="t01Config"
 									placeholder=" Enter something..."
 									required>
 								</input>
@@ -137,11 +160,12 @@
 								<label for="t04">Textarea</label>
 								<textarea name="t04" ng-model="t04"
 									class="materialize-textarea"
-									ng-virtual-keyboard="{layout: 'international', autoAccept: true}">
+									ng-virtual-keyboard="t04Config">
 								</textarea>
 								<small>
 									Model value: {{t04}}<br>
-									* Auto accept content.
+									* Auto accept content.<br>
+									* Extension Scramble
 								</small>
 							</div>
 						</div>

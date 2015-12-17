@@ -12,10 +12,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="keyboard/js/jquery.keyboard.min.js"></script>
+  <script src="keyboard/js/jquery.keyboard.extension-typing.min.js"></script>
 
   <script type="text/javascript">
   jQuery(function($) {
-    $('.qwerty:first').keyboard({ layout: 'qwerty' });
+    $('.qwerty:first').keyboard({ layout: 'qwerty' }).addTyping();
 
     $('.version').html( '(v' + $('.qwerty').getkeyboard().version + ')' );
 
@@ -49,7 +50,8 @@
       <input id="text" class="qwerty" type="text" placeholder=" Enter something...">
       <br>
       <small>
-        * Placeholder (watermark).
+        * Placeholder (watermark).<br>
+        * Extension Typing
       </small>
     </div>
 
