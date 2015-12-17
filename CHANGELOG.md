@@ -1,5 +1,20 @@
+<a name"0.2.0"></a>
+## 0.2.0 (2015-12-17)
+
+#### Features
+
+- **ngVirtualKeyboardService:**
+  - Added support for keyboard extensions
+ ([6e76e2d](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/6e76e2dd08e9ea49bf1f5aa0b31b79b9b028ebbe))
+
+#### Documentation
+
+- **Extension:**
+  - New examples with typing and scrumble extensions
+ ([3f10d13](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/3f10d134af926df80ee1b06585e2f15b847bcaaf))
+
 <a name"0.1.0"></a>
-## 0.1.0 (2015-10-03)
+### 0.1.0 (2015-10-03)
 
 #### Features
 
