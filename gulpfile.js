@@ -9,7 +9,7 @@ var path = {
 	src: {
 		files: 'src/**/*.js'
 	}
-}
+};
 
 gulp.task('jshint', function(done) {
 	gulp.src(path.src.files)

@@ -2,10 +2,18 @@
 
 An AngularJs Virtual Keyboard Interface based on [Mottie/Keyboard](https://github.com/Mottie/Keyboard). See example in the [Demo page](http://mottie.github.com/Keyboard/)
 
-## Bower install
+[![Bower Version][bower-image]][bower-url] [![NPM Version][npm-image]][npm-url]
 
+## Install
+
+* Install using [bower](https://github.com/bower/bower).
 ```sh
-$ bower install ng-virtual-keyboard
+bower install ng-virtual-keyboard
+```
+
+* Install using [npm](https://www.npmjs.com/).
+```sh
+npm install ng-virtual-keyboard
 ```
 
 ## Dependencies
