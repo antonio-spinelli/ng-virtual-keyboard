@@ -1,6 +1,6 @@
 {
   "name": "ng-virtual-keyboard",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An AngularJs Virtual Keyboard Interface based on Mottie/Keyboard",
   "repository": {
     "type": "git",
