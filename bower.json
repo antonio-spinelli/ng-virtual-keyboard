@@ -7,7 +7,7 @@
   ],
   "description": "An AngularJs Virtual Keyboard Interface based on Mottie/Keyboard",
   "main": [
-    "dist/ng-virtual-keyboard.min.js"
+    "dist/ng-virtual-keyboard.js"
   ],
   "keywords": [
     "Keyboard",
