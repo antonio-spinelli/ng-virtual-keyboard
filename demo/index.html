@@ -35,7 +35,8 @@
 			VKI_CONFIG.position = {
 				of: 'body',
 				my: 'center top',
-				at: 'center bottom'
+				at: 'center bottom',
+				at2: 'center bottom'
 			};
 			VKI_CONFIG.tabNavigation = true;
 			VKI_CONFIG.css = {
@@ -78,6 +79,35 @@
 					}
 				}
 			};
+
+			$scope.t05Config = {
+				layout: 'alpha',
+				extensions: {
+					addTyping: false
+				},
+				events: {
+					keyboardChange: function(e, kb, el) {
+						console.log(e.type + ', "' + el.value + '", "' + kb.$preview.val() + '"');
+					},
+					change: function(e, kb, el) {
+						console.log(e.type + ', "' + el.value + '", "' + kb.$preview.val() + '"');
+					}
+				}
+			};
+
+			$scope.t06Config = {
+				layout: 'alpha',
+				extensions: {
+					addTyping: false
+				},
+				autoAccept: true,
+				usePreview: false,
+				autoUpdateModel: true
+			};
+
+			$scope.t06Change = function() {
+				console.log('t06 value changed');
+			};
 		}]);
 	</script>
 
@@ -118,7 +148,7 @@
 								</input>
 								<small>
 									Model value: {{t02}}<br>
-									* Valid Email
+									* Valid Email.
 								</small>
 							</div>
 						</div>
@@ -165,7 +195,38 @@
 								<small>
 									Model value: {{t04}}<br>
 									* Auto accept content.<br>
-									* Extension Scramble
+									* Extension Scramble.
+								</small>
+							</div>
+						</div>
+
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t05">Event Handler</label>
+								<input type="text" name="t05" ng-model="t05"
+									class="validate"
+									ng-virtual-keyboard="t05Config">
+								</input>
+								<small>
+									Model value: {{t05}}<br>
+									* Event keyboardChange and change.
+								</small>
+							</div>
+						</div>
+
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t06">Auto Update Model</label>
+								<input type="text" name="t06" ng-model="t06"
+									class="validate"
+									ng-change="t06Change()"
+									ng-virtual-keyboard="t06Config">
+								</input>
+								<small>
+									Model value: {{t06}}<br>
+									* No preview.<br>
+									* Auto update model.<br>
+									* ngChange fired.
 								</small>
 							</div>
 						</div>
