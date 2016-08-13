@@ -66,6 +66,7 @@ angular.module('ng-virtual-keyboard', [])
 			}
 
 			newConfig.accepted = config.accepted || inputCallback;
+			newConfig.change = config.change || inputCallback;
 
 			var keyboard = $(element).keyboard(newConfig);
 
