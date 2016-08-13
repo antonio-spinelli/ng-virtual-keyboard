@@ -66,7 +66,22 @@ angular.module('ng-virtual-keyboard', [])
 			}
 
 			newConfig.accepted = config.accepted || inputCallback;
-			newConfig.change = config.change || inputCallback;
+
+			if (config.autoUpdateModel) {
+				newConfig.change = config.change || inputCallback;
+			}
+
+			if (newConfig.events) {
+				var addEventMethod = function(eventName) {
+					return function(e, kb, el) {
+						newConfig.events[eventName](e, $(this).data('keyboard'), this);
+					};
+				};
+
+				for (var eventName in newConfig.events) {
+					$(element).on(eventName, addEventMethod(eventName));
+				}
+			}
 
 			var keyboard = $(element).keyboard(newConfig);
 
@@ -103,7 +118,7 @@ angular.module('ng-virtual-keyboard', [])
 					return;
 				}
 
-				ngVirtualKeyboardService.attach(elements[0], scope.config, function() {
+				ngVirtualKeyboardService.attach(elements[0], scope.config, function(e, kb, el) {
 					$timeout(function() {
 						ngModelCtrl.$setViewValue(elements[0].value);
 					});
