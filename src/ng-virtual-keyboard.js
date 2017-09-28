@@ -123,6 +123,9 @@ angular.module('ng-virtual-keyboard', [])
 						ngModelCtrl.$setViewValue(elements[0].value);
 					});
 				});
+				scope.$on("$destroy", function() {
+					$(elements[0]).keyboard().getkeyboard().destroy();
+				});
 			}
 		};
 	}
