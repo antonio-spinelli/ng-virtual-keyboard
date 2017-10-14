@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/antonio-spinelli/ng-virtual-keyboard",
   "devDependencies": {
+    "bower": "^1.8.2",
     "conventional-changelog": "0.0.16",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
@@ -27,6 +28,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
+    "bower": "bower",
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
