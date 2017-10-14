@@ -1,7 +1,7 @@
 /**
  * ng-virtual-keyboard
  * An AngularJs Virtual Keyboard Interface based on Mottie/Keyboard
- * @version v0.3.0
+ * @version v0.3.1
  * @author antonio-spinelli <antonio.86.spinelli@gmail.com>
  * @link https://github.com/antonio-spinelli/ng-virtual-keyboard
  * @license MIT
@@ -132,6 +132,10 @@ angular.module('ng-virtual-keyboard', [])
 					$timeout(function() {
 						ngModelCtrl.$setViewValue(elements[0].value);
 					});
+				});
+
+				scope.$on('$destroy', function() {
+					$(elements[0]).getkeyboard().destroy();
 				});
 			}
 		};

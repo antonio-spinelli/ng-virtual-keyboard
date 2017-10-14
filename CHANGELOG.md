@@ -1,7 +1,18 @@
+<a name="0.3.1"></a>
+## 0.3.1 (2017-10-14)
+
+#### Bug Fixes
+
+- **ngVirtualKeyboardDirective:**
+  - Call keyboard destroy function on $scope destroy
+ ([037835d](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/037835d867c2e55299d1a606d8b461a9827e208a))
+ ([ba6f953](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/ba6f953076fa9bd837bf62d1d9605e53f9e163cf))
+
 <a name="0.3.0"></a>
 ## 0.3.0 (2016-08-13)
 
 #### Features
+
 - **ngVirtualKeyboardService:**
   - Added autoUpdateModel config option
  ([30a4894](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/30a4894d3b247c785c12eab5228242f3cf7cdbee))
@@ -9,6 +20,7 @@
  ([30a4894](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/30a4894d3b247c785c12eab5228242f3cf7cdbee))
 
 #### Documentation
+
 - **New config options:**
   - New examples with event handler and autoUpdateModel
  ([02daa4c](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/02daa4c947738efc131c6dd28bcdee08860b4015))
