@@ -1,3 +1,12 @@
+<a name="0.3.3"></a>
+## 0.3.3 (2018-02-22)
+
+#### Bug Fixes
+
+- **ngVirtualKeyboardDirective:**
+  - Fix typo
+ ([5f7580d](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/5f7580df7f87f86c8aaadff8bc0f0799bbd1d6f2))
+
 <a name="0.3.2"></a>
 ## 0.3.2 (2018-02-22)
 
