@@ -114,7 +114,7 @@ angular.module('ng-virtual-keyboard', [])
 				config: '=ngVirtualKeyboard'
 			},
 			link: function(scope, elements, attrs, ngModelCtrl) {
-				var element = element[0];
+				var element = elements[0];
 
 				if (!ngModelCtrl || !element) {
 					return;
