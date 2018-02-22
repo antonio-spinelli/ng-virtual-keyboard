@@ -1,3 +1,12 @@
+<a name="0.3.2"></a>
+## 0.3.2 (2018-02-22)
+
+#### Bug Fixes
+
+- **ngVirtualKeyboardDirective:**
+  - Fix error on $scope destroy when keyboard not found
+ ([bfde461](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/bfde461756bcf94d7e241b8c8406ff82c6509ccc))
+
 <a name="0.3.1"></a>
 ## 0.3.1 (2017-10-14)
 
