@@ -120,17 +120,32 @@ angular.module('ng-virtual-keyboard', [])
 					return;
 				}
 
-				ngVirtualKeyboardService.attach(element, scope.config, function(e, kb, el) {
-					$timeout(function() {
-						ngModelCtrl.$setViewValue(element.value);
+				var createKeyboard = function(element, config) {
+					ngVirtualKeyboardService.attach(element, config, function(e, kb, el) {
+						$timeout(function() {
+							ngModelCtrl.$setViewValue(element.value);
+						});
 					});
-				});
+				};
 
-				scope.$on('$destroy', function() {
-					var keyboard = $(element).getkeyboard();
+				var destroyKeyboard = function(element) {
+					var keyboard = ngVirtualKeyboardService.getKeyboard(element);
 					if (keyboard) {
 						keyboard.destroy();
 					}
+				};
+
+				createKeyboard(element, scope.config);
+
+				scope.$watch('config', function (newConfig, oldValue) {
+					if (newConfig) {
+						destroyKeyboard(element);
+						createKeyboard(element, newConfig);
+					}
+				}, true);
+
+				scope.$on('$destroy', function() {
+					destroyKeyboard(element);
 				});
 			}
 		};
