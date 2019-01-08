@@ -19,13 +19,13 @@ gulp.task('jshint', function(done) {
 });
 
 gulp.task('build', function() {
-	var pkg = require('./bower.json');
+	var pkg = require('./package.json');
 
 	var header = ['/**',
 		' * <%= pkg.name %>',
 		' * <%= pkg.description %>',
 		' * @version v<%= pkg.version %>',
-		' * @author <%= pkg.authors[0]%>',
+		' * @author <%= pkg.author%>',
 		' * @link <%= pkg.homepage %>',
 		' * @license <%= pkg.license %>',
 		' */',
@@ -55,7 +55,7 @@ gulp.task('default', ['jshint', 'build'], function() {
 });
 
 gulp.task('changelog', function(done) {
-	var pkg = require('./bower.json');
+	var pkg = require('./package.json');
 	var changelog = require('conventional-changelog');
 	var fs = require('fs');
 

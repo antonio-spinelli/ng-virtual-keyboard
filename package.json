@@ -12,6 +12,10 @@
     "url": "https://github.com/antonio-spinelli/ng-virtual-keyboard/issues"
   },
   "homepage": "https://github.com/antonio-spinelli/ng-virtual-keyboard",
+  "dependencies": {
+    "angular": "^1.3.x",
+    "virtual-keyboard": "^1.25.11"
+  },
   "devDependencies": {
     "bower": "^1.8.2",
     "conventional-changelog": "0.0.16",
