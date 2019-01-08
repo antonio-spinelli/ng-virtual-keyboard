@@ -1,3 +1,12 @@
+<a name="0.4.0"></a>
+## 0.4.0 (2019-01-08)
+
+#### Features
+
+- **ngVirtualKeyboardDirective:**
+  - Dynamic keyboard config
+ ([8045924](https://github.com/antonio-spinelli/ng-virtual-keyboard/commit/804592485fa517d73f26b298c97cd938d315efa4))
+
 <a name="0.3.3"></a>
 ## 0.3.3 (2018-02-22)
 
